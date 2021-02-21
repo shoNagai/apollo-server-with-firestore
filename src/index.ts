@@ -3,6 +3,7 @@ import { importSchema } from 'graphql-import';
 import { makeExecutableSchema } from 'graphql-tools';
 import { send } from 'micro';
 import { get, post, router } from 'microrouter';
+import dataSources from './datasources';
 import { resolvers } from './resolvers';
 
 const schema = makeExecutableSchema({
@@ -10,7 +11,7 @@ const schema = makeExecutableSchema({
   resolvers,
 });
 
-const apolloServer = new ApolloServer({ schema });
+const apolloServer = new ApolloServer({ schema, dataSources });
 const graphqlHandler = apolloServer.createHandler({ path: '/' });
 
 module.exports = router(post('/', graphqlHandler), get('/', graphqlHandler), (_, res) => send(res, 404, 'Not Found'));

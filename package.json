@@ -1,17 +1,17 @@
 {
-  "name": "apollo-server-micro-boilerplate",
+  "name": "apollo-server-with-firestore",
   "version": "1.0.0",
   "main": "index.js",
   "author": "sho nagai <strawberry4062@gmail.com>",
   "description": "Getting started with GraphQL on apollo-server-micro 🚀",
   "license": "MIT",
-  "homepage": "https://github.com/shoNagai/apollo-server-micro-boilerplate#readme",
+  "homepage": "https://github.com/shoNagai/apollo-server-with-firestore#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shoNagai/apollo-server-micro-boilerplate"
+    "url": "https://github.com/shoNagai/apollo-server-with-firestore"
   },
   "bugs": {
-    "url": "https://github.com/shoNagai/apollo-server-micro-boilerplate/issues"
+    "url": "https://github.com/shoNagai/apollo-server-with-firestore/issues"
   },
   "keywords": [
     "typescript",
@@ -22,7 +22,7 @@
   "private": false,
   "scripts": {
     "start": "micro ./build/index.js",
-    "dev": "node -r ts-node/register node_modules/.bin/micro-dev ./src/index.ts",
+    "dev": "GOOGLE_APPLICATION_CREDENTIALS=./.key/service_account.json PROJECT_ID=apollo-server-with-firestore node -r ts-node/register node_modules/.bin/micro-dev ./src/index.ts",
     "build": "tsc -b",
     "format": "prettier . -w",
     "lint": "eslint src/**/*.ts",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "apollo-server-micro": "^2.21.0",
+    "firebase-admin": "^9.5.0",
     "graphql": "^15.5.0",
     "graphql-import": "^1.0.2",
     "graphql-tools": "^7.0.4",

@@ -1,4 +1,5 @@
 import { GraphQLResolveInfo } from 'graphql';
+import { Context } from './context';
 export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
@@ -125,7 +126,7 @@ export type ResolversParentTypes = ResolversObject<{
 }>;
 
 export type BookResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']
 > = ResolversObject<{
   author?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -135,13 +136,13 @@ export type BookResolvers<
 }>;
 
 export type QueryResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = ResolversObject<{
   books?: Resolver<Array<ResolversTypes['Book']>, ParentType, ContextType>;
 }>;
 
-export type Resolvers<ContextType = any> = ResolversObject<{
+export type Resolvers<ContextType = Context> = ResolversObject<{
   Book?: BookResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
 }>;
@@ -150,4 +151,4 @@ export type Resolvers<ContextType = any> = ResolversObject<{
  * @deprecated
  * Use "Resolvers" root object instead. If you wish to get "IResolvers", add "typesPrefix: I" to your config.
  */
-export type IResolvers<ContextType = any> = Resolvers<ContextType>;
+export type IResolvers<ContextType = Context> = Resolvers<ContextType>;

@@ -1,12 +1,12 @@
-# apollo-server-micro-boilerplate
+# apollo-server-with-firestore
 
 Getting started with GraphQL on apollo-server-micro 🚀
 
 ## Installation
 
 ```
-$ git clone https://github.com/shoNagai/apollo-server-micro-boilerplate.git
-$ cd apollo-server-micro-boilerplate
+$ git clone https://github.com/shoNagai/apollo-server-with-firestore.git
+$ cd apollo-server-with-firestore
 $ yarn install
 $ yarn dev
 ```
@@ -51,7 +51,9 @@ export const resolvers: Resolvers = {
 ```
 
 ## step4 try playground
+
 ```
 $ yarn dev
 ```
+
 ![playground](https://i.gyazo.com/60bf027d64e96bbb6774f00c92e244db.gif)
