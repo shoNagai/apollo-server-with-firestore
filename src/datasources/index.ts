@@ -1,16 +1,10 @@
-import * as admin from 'firebase-admin';
-import Firestore from './firestore';
+import FirestoreDatasource from './firestoreDatasource';
 
 export interface DataSources {
-  firestore: Firestore;
+  firestore: FirestoreDatasource;
 }
-
-admin.initializeApp({
-  databaseURL: `https://${process.env.PROJECT_ID}.firebaseio.com`,
-});
-
 const dataSources = () => ({
-  firestore: new Firestore(admin.firestore()),
+  firestore: new FirestoreDatasource(),
 });
 
 export default dataSources;
