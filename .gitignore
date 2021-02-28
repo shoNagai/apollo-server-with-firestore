@@ -5,3 +5,9 @@ build
 .DS_store
 yarn-error.log
 .key
+.jest-cache*
+
+ui-debug.log
+
+firebase-debug.log
+firestore-debug.log

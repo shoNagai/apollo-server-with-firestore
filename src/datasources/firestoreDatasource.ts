@@ -1,18 +1,13 @@
 import { DataSource } from 'apollo-datasource';
-import * as admin from 'firebase-admin';
+import { firestore } from 'firebase-admin';
 import { getDocData } from '../utils/getDocData';
 
 export default class FirestoreDatasource extends DataSource {
-  public db: admin.firestore.Firestore;
+  public db: firestore.Firestore;
 
-  constructor() {
+  constructor(firestore: firestore.Firestore) {
     super();
-    if (!admin.apps.length) {
-      admin.initializeApp({
-        databaseURL: `https://${process.env.PROJECT_ID}.firebaseio.com`,
-      });
-    }
-    this.db = admin.firestore();
+    this.db = firestore;
   }
 
   public get = async <T>(collectionPath: string, docId: string) => {
