@@ -6,9 +6,6 @@ import FirestoreDatasource from '../../datasources/firestoreDatasource';
 import { Book, bookPath } from '../../repositories/book';
 import { resolvers } from '../../resolvers';
 
-// const TIMEOUT = 20000;
-// jest.setTimeout(TIMEOUT);
-
 const PROJECT_ID = `apollo-server-with-firestore`;
 
 const adminApp = firebaseTesting.initializeAdminApp({ projectId: PROJECT_ID });
