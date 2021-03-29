@@ -2,12 +2,12 @@ import * as firebaseTesting from '@firebase/testing';
 import { ApolloServer, gql } from 'apollo-server-micro';
 import { createTestClient } from 'apollo-server-testing';
 import { importSchema } from 'graphql-import';
-import FirestoreDatasource from '../../../datasources/firestoreDatasource';
-import { Book, bookPath } from '../../../repositories/book';
-import { resolvers } from '../../../resolvers';
+import FirestoreDatasource from '../../datasources/firestoreDatasource';
+import { Book, bookPath } from '../../repositories/book';
+import { resolvers } from '../../resolvers';
 
-const TIMEOUT = 20000;
-jest.setTimeout(TIMEOUT);
+// const TIMEOUT = 20000;
+// jest.setTimeout(TIMEOUT);
 
 const PROJECT_ID = `apollo-server-with-firestore`;
 
@@ -53,7 +53,7 @@ afterAll(async () => {
   await Promise.all(firebaseTesting.apps().map((app) => app.delete()));
 });
 
-describe('book resolver e2e test', () => {
+describe('book resolver test', () => {
   describe('正常系', () => {
     beforeEach(async () => {
       const store = new FirestoreDatasource(firestore as any);

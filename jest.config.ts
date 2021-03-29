@@ -1,12 +1,12 @@
 const esModules = ['lodash-es'].join('|');
 
 module.exports = {
-  name: 'e2e-test',
+  name: 'integration-test',
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   preset: 'ts-jest',
-  testMatch: ['<rootDir>/src/test/e2e/resolvers/**/*.ts'],
-  cacheDirectory: './.jest-cache-e2e',
+  testMatch: ['<rootDir>/src/test/resolvers/**/*.ts'],
+  cacheDirectory: './.jest-cache',
   maxWorkers: 1,
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/build/'],
   transform: {

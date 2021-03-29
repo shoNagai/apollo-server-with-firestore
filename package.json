@@ -28,9 +28,9 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "yarn lint --fix",
     "generate": "graphql-codegen",
-    "test:e2e": "FIRESTORE_EMULATOR_HOST='localhost:8080' NODE_ENV=test jest --config ./jest.config.e2e.ts",
-    "test:e2e:local": "firebase use apollo-server-with-firestore && PROJECT_ID=apollo-server-with-firestore yarn test:e2e",
-    "test:e2e:ci": "firebase emulators:exec --project $PROJECT_ID 'yarn test:e2e'",
+    "test": "FIRESTORE_EMULATOR_HOST='localhost:8080' NODE_ENV=test jest --config ./jest.config.ts",
+    "test:local": "firebase use apollo-server-with-firestore && PROJECT_ID=apollo-server-with-firestore yarn test",
+    "test:ci": "firebase emulators:exec --project $PROJECT_ID 'yarn test'",
     "emulators:start": "yarn build && firebase emulators:start"
   },
   "dependencies": {
