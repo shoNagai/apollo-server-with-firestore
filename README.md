@@ -28,6 +28,9 @@ src/types/graphql.ts
 ## Run Test
 
 ```
+# エミュレーター起動
 $ yarn emulators:start
+
+# テスト実行
 $ yarn test:local
 ```
